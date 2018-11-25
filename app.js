@@ -5,15 +5,23 @@ let numberCheckBox = document.getElementById("numbers");
 let specialCheckBox = document.getElementById("special");
 
 
+
 // Show a password on load 
-window.onload = displayPassword;
+window.onload = getPasswordOnLoad;
 
 button.addEventListener('click', function(){
-    let password = generatePassword(10);
+    let len = document.getElementById("len").value;
+    len = Math.min(Math.max(parseInt(len), 1), 20);//limits the length to 20
+    let password = generatePassword(len);
     document.getElementById('password').innerHTML = "Password: " + password;
+    console.log(len);
 });
 
-function displayPassword(){
+function getPassword(){
+    document.getElementById('password').innerHTML = "Password: " + generatePassword(len);
+}
+
+function getPasswordOnLoad(){
     document.getElementById('password').innerHTML = "Password: " + generatePassword(10);
 }
 

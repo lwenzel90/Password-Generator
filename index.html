@@ -12,8 +12,9 @@
 <body>
     <div class="container">
         <div class="jumbotron mt-4 text-center ">
+            <h1>Create a Password</h1>
+            
             <div class="form-check container mb-2">
-                <legend class="form-label col-sm-2 pt-0"><strong>Radios</strong> </legend>
                 <input id="lowercase" type="checkbox" class="form-check-input" checked="true">
                 <label for="lowercase" class="form-check-label">Lowercase</label>
                 <br>
@@ -26,10 +27,13 @@
                 <input id="special" type="checkbox" class="form-check-input" checked="true">
                 <label for="special" class="form-check-label">Special (!@#$...)</label>
                 <br>
+                <input id="len" type="number" class="form-check-input" max="20">
+                <label for="special" class="form-check-label">Special (!@#$...)</label>
+                
             </div>
             
-            <button id="createPassword" class="btn btn-primary btn-lg col-4">Generate Password</button>
-            <h3 id="password">Password:</h3>
+            <button id="createPassword" class="btn btn-primary btn-lg col-lg-4 col-md-6 col-sm-8 col-xs-12 mt-4">Generate Password</button>
+            <h3 id="password"></h3>
         </div>
         
     </div>

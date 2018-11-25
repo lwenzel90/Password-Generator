@@ -4,12 +4,13 @@ let uppercaseCheckBox = document.getElementById("uppercase");
 let numberCheckBox = document.getElementById("numbers");
 let specialCheckBox = document.getElementById("special");
 
+
 // Show a password on load 
 window.onload = displayPassword;
 
 button.addEventListener('click', function(){
-    document.getElementById('password').innerHTML = "Password: " + generatePassword(10);
-    console.log(lowercaseCheckBox.checked);
+    let password = generatePassword(10);
+    document.getElementById('password').innerHTML = "Password: " + password;
 });
 
 function displayPassword(){
@@ -22,8 +23,7 @@ function generatePassword(len){
         let curr;
         // get a 0 1 or 2 then preform switch case 
         // switch 0 uppercase, 1 lowercase, 2 numbers, 3 special values (!@#$%^&*)
-        let caseNum = getRandomInt(0, 4);
-        
+        let caseNum = getRandomInt(0, 4);  
         switch(caseNum) {
             case 0:
                 if(uppercaseCheckBox.checked === true){
@@ -45,7 +45,7 @@ function generatePassword(len){
                 }
             case 3:
                 if(specialCheckBox.checked === true){
-                    curr = getRandomInt(33, 64);
+                    curr = getRandomInt(33, 38);
                     result += String.fromCharCode(curr);
                     break;
                 }
